@@ -1,8 +1,8 @@
 import unittest
-from split_node_delimiter import split_node_delimiter
+from split_node import split_node_delimiter
 from textnode import TextNode, TextType
 
-class TestSplitNodeDelimiter(unittest.TestCase):
+class TestSplitNode(unittest.TestCase):
     def test_split_note_delimiter(self):
         nodes = [
             TextNode("Hello, ", TextType.TEXT),
