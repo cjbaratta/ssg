@@ -1,9 +1,8 @@
-from textnode import TextNode, TextType
+from copy_static import copy_static
 
 
 def main():
-    node = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
-    print(node)
+    copy_static("/Users/cjbaratta/Projects/BootDev/ssg/static")
 
 
 main()
