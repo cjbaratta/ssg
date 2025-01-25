@@ -2,6 +2,7 @@ import os
 import shutil
 
 def copy_static(folder):
-    if os.path.exists("/Users/cjbaratta/Projects/BootDev/ssg/public"):
-        shutil.rmtree("/Users/cjbaratta/Projects/BootDev/ssg/public")
-    shutil.copytree(folder, "/Users/cjbaratta/Projects/BootDev/ssg/public")
+    public_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "public")
+    if os.path.exists(public_path):
+        shutil.rmtree(public_path)
+    shutil.copytree(folder, public_path)

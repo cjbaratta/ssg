@@ -1,8 +1,10 @@
 from copy_static import copy_static
+import os
 
 
 def main():
-    copy_static("/Users/cjbaratta/Projects/BootDev/ssg/static")
+    static_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static")
+    copy_static(static_path)
 
 
 main()
