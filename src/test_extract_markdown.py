@@ -1,5 +1,5 @@
 import unittest
-from extract_markdown import extract_markdown_images, extract_markdown_links
+from extract_markdown import extract_markdown_images, extract_markdown_links, extract_title
 
 class TestExtractMarkdown(unittest.TestCase):
     def test_no_images(self):
@@ -25,5 +25,13 @@ class TestExtractMarkdown(unittest.TestCase):
                 ("another link", "https://boot.dev"),
             ],
         )
+        
+    def test_title(self):
+        text = "# This is a title"
+        self.assertEqual(extract_title(text), ["This is a title"])
+        
+    def test_title_no_title(self):
+        text = "This is text with no title"
+        self.assertRaises(Exception, extract_title, text)
         
     
